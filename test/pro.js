@@ -9,52 +9,52 @@ describe('RajaOngkir Pro Package Test', function () {
         it('Should Return API Key', function () {
 
         })
-        var RajaOngkir = require('../index').Pro(apiKey)
+        var RajaOngkir = require('../app').Pro(apiKey)
 
         describe('Get All Provinces', function () {
-          it('Should Return All Provinces', function (done) {
+          it('Should Return All Provinces', function () {
             return RajaOngkir.getProvinces().then(function (result) {
               result.should.have.property('rajaongkir')
               result.rajaongkir.status.code.should.deep.equal(200)
               result.rajaongkir.status.description.should.deep.equal('OK')
-            }).catch(done)
+            })
           })
         })
 
         describe('Get Specific Province by ID', function () {
-          it('Should Return Specific Province', function (done) {
+          it('Should Return Specific Province', function () {
             var id = 1
             return RajaOngkir.getProvince(id).then(function (result) {
               result.should.have.property('rajaongkir')
               result.rajaongkir.status.code.should.deep.equal(200)
               result.rajaongkir.status.description.should.deep.equal('OK')
-            }).catch(done)
+            })
           })
         })
 
         describe('Get All Cities', function () {
-          it('Should Return All Cities', function (done) {
+          it('Should Return All Cities', function () {
             return RajaOngkir.getCities().then(function (result) {
               result.should.have.property('rajaongkir')
               result.rajaongkir.status.code.should.deep.equal(200)
               result.rajaongkir.status.description.should.deep.equal('OK')
-            }).catch(done)
+            })
           })
         })
 
         describe('Get Specific City by ID', function () {
-          it('Should Return Specific City', function (done) {
+          it('Should Return Specific City', function () {
             var id = 1
             return RajaOngkir.getCity(id).then(function (result) {
               result.should.have.property('rajaongkir')
               result.rajaongkir.status.code.should.deep.equal(200)
               result.rajaongkir.status.description.should.deep.equal('OK')
-            }).catch(done)
+            })
           })
         })
 
         describe('Get Specific Subdistrict by ID', function () {
-          it('Should Return Specific Subdistrict', function (done) {
+          it('Should Return Specific Subdistrict', function () {
             var params = {
               city: 1,
               id: 1
@@ -63,12 +63,12 @@ describe('RajaOngkir Pro Package Test', function () {
               result.should.have.property('rajaongkir')
               result.rajaongkir.status.code.should.deep.equal(200)
               result.rajaongkir.status.description.should.deep.equal('OK')
-            }).catch(done)
+            })
           })
         })
 
         describe('Get All Shipping Costs', function () {
-          it('Should Return Shipping Costs With Chosen Couriers', function (done) {
+          it('Should Return Shipping Costs With Chosen Couriers', function () {
             var params = {
               origin: 501,
               originType: 'city',
@@ -85,7 +85,7 @@ describe('RajaOngkir Pro Package Test', function () {
               result.should.have.property('rajaongkir')
               result.rajaongkir.status.code.should.deep.equal(200)
               result.rajaongkir.status.description.should.deep.equal('OK')
-            }).catch(done)
+            })
           })
         })
 
@@ -100,10 +100,10 @@ describe('RajaOngkir Pro Package Test', function () {
               length: '',
               width: '',
               height: '',
-              diameter: ''
+              diameter: '',
               courier: 'jne',
             }
-            return RajaOngkir.getCost(params).then(function (result) {
+            return RajaOngkir.getCosts(params).then(function (result) {
               result.should.have.property('rajaongkir')
               result.rajaongkir.status.code.should.deep.equal(200)
               result.rajaongkir.status.description.should.deep.equal('OK')
@@ -555,23 +555,42 @@ describe('RajaOngkir Pro Package Test', function () {
           })
         })
 
-        /*   describe('Get TIKI International Shipping Cost', function () {
-          it('Should Return TIKI International Shipping Cost', function () {
+        describe('Get Specific International Shipping Cost', function () {
+          it('Should Return Specific International Shipping Cost', function () {
             var params = {
               origin: 152,
               destination: 108,
               weight: 1400,
               length: '',
               width: '',
-              height: ''
+              height: '',
+              courier: 'pos',
             }
-            return RajaOngkir.getTIKIInterConst(params).then(function (result) {
+            return RajaOngkir.getInterCost(params).then(function (result) {
               result.should.have.property('rajaongkir')
               result.rajaongkir.status.code.should.deep.equal(200)
               result.rajaongkir.status.description.should.deep.equal('OK')
             })
           })
         })
+
+        // describe('Get TIKI International Shipping Cost', function () {
+        //   it('Should Return TIKI International Shipping Cost', function () {
+        //     var params = {
+        //       origin: 152,
+        //       destination: 108,
+        //       weight: 1400,
+        //       length: '',
+        //       width: '',
+        //       height: ''
+        //     }
+        //     return RajaOngkir.getTIKIInterCost(params).then(function (result) {
+        //       result.should.have.property('rajaongkir')
+        //       result.rajaongkir.status.code.should.deep.equal(200)
+        //       result.rajaongkir.status.description.should.deep.equal('OK')
+        //     })
+        //   })
+        // })
 
         describe('Get POS International Shipping Cost', function () {
           it('Should Return POS International Shipping Cost', function () {
@@ -589,7 +608,7 @@ describe('RajaOngkir Pro Package Test', function () {
               result.rajaongkir.status.description.should.deep.equal('OK')
             })
           })
-        }) */
+        }) 
 
         describe('Get JNE International Shipping Cost', function () {
           it('Should Return JNE International Shipping Cost', function () {
@@ -655,9 +674,20 @@ describe('RajaOngkir Pro Package Test', function () {
           })
         })
 
+        describe('Get Specific Courier Waybill', function () {
+          it('Should Return Specific Courier Waybill', function () {
+            var params = { waybill: '15193075544', courier: 'pos' }
+            return RajaOngkir.getWaybill(params).then(function (result) {
+              result.should.have.property('rajaongkir')
+              result.rajaongkir.status.code.should.deep.equal(200)
+              result.rajaongkir.status.description.should.deep.equal('OK')
+            })
+          })
+        })
+
         describe('Get JNE Waybill', function () {
           it('Should Return JNE Waybill', function () {
-            var params = { waybill: 'SOCAG00183235715' }
+            var params = { waybill: '370910002526519' }
             return RajaOngkir.getJNEWaybill(params).then(function (result) {
               result.should.have.property('rajaongkir')
               result.rajaongkir.status.code.should.deep.equal(200)
@@ -666,126 +696,126 @@ describe('RajaOngkir Pro Package Test', function () {
           })
         })
 
-        /* describe('Get POS Waybill', function () {
-                    it('Should Return POS Waybill', function () {
-                        var params = {waybill: 'SOCAG00183235715'};
-                        return RajaOngkir.getPOSWaybill(params).then(function (result) {
-                            result.should.have.property('rajaongkir');
-                            result.rajaongkir.status.code.should.deep.equal(200);
-                            result.rajaongkir.status.description.should.deep.equal("OK");
-                        });
-                    });
-                });
+         describe('Get POS Waybill', function () {
+              it('Should Return POS Waybill', function () {
+                  var params = {waybill: '15193075544'};
+                  return RajaOngkir.getPOSWaybill(params).then(function (result) {
+                      result.should.have.property('rajaongkir');
+                      result.rajaongkir.status.code.should.deep.equal(200);
+                      result.rajaongkir.status.description.should.deep.equal("OK");
+                  });
+              });
+          });
 
-                describe('Get TIKI Waybill', function () {
-                    it('Should Return TIKI Waybill', function () {
-                        var params = {waybill: 'SOCAG00183235715'};
-                        return RajaOngkir.getTIKIWaybill(params).then(function (result) {
-                            result.should.have.property('rajaongkir');
-                            result.rajaongkir.status.code.should.deep.equal(200);
-                            result.rajaongkir.status.description.should.deep.equal("OK");
-                        });
-                    });
-                });
+          describe('Get TIKI Waybill', function () {
+              it('Should Return TIKI Waybill', function () {
+                  var params = {waybill: '020169801905'};
+                  return RajaOngkir.getTIKIWaybill(params).then(function (result) {
+                      result.should.have.property('rajaongkir');
+                      result.rajaongkir.status.code.should.deep.equal(200);
+                      result.rajaongkir.status.description.should.deep.equal("OK");
+                  });
+              });
+          });
 
-                describe('Get WAHANA Waybill', function () {
-                    it('Should Return WAHANA Waybill', function () {
-                        var params = {waybill: 'SOCAG00183235715'};
-                        return RajaOngkir.getWahanaWaybill(params).then(function (result) {
-                            result.should.have.property('rajaongkir');
-                            result.rajaongkir.status.code.should.deep.equal(200);
-                            result.rajaongkir.status.description.should.deep.equal("OK");
-                        });
-                    });
-                });
+          describe('Get WAHANA Waybill', function () {
+              it('Should Return WAHANA Waybill', function () {
+                  var params = {waybill: 'SOCAG00183235715'};
+                  return RajaOngkir.getWahanaWaybill(params).then(function (result) {
+                      result.should.have.property('rajaongkir');
+                      result.rajaongkir.status.code.should.deep.equal(200);
+                      result.rajaongkir.status.description.should.deep.equal("OK");
+                  });
+              });
+          });
 
-                describe('Get JNT Waybill', function () {
-                    it('Should Return JNT Waybill', function () {
-                        var params = {waybill: 'SOCAG00183235715'};
-                        return RajaOngkir.getJNTWaybill(params).then(function (result) {
-                            result.should.have.property('rajaongkir');
-                            result.rajaongkir.status.code.should.deep.equal(200);
-                            result.rajaongkir.status.description.should.deep.equal("OK");
-                        });
-                    });
-                });
+          describe('Get JNT Waybill', function () {
+              it('Should Return JNT Waybill', function () {
+                  var params = {waybill: 'SOCAG00183235715'};
+                  return RajaOngkir.getJNTWaybill(params).then(function (result) {
+                      result.should.have.property('rajaongkir');
+                      result.rajaongkir.status.code.should.deep.equal(200);
+                      result.rajaongkir.status.description.should.deep.equal("OK");
+                  });
+              });
+          });
 
-                describe('Get RPX Waybill', function () {
-                    it('Should Return RPX Waybill', function () {
-                        var params = {waybill: 'SOCAG00183235715'};
-                        return RajaOngkir.getRPXWaybill(params).then(function (result) {
-                            result.should.have.property('rajaongkir');
-                            result.rajaongkir.status.code.should.deep.equal(200);
-                            result.rajaongkir.status.description.should.deep.equal("OK");
-                        });
-                    });
-                });
+          describe('Get RPX Waybill', function () {
+              it('Should Return RPX Waybill', function () {
+                  var params = {waybill: 'SOCAG00183235715'};
+                  return RajaOngkir.getRPXWaybill(params).then(function (result) {
+                      result.should.have.property('rajaongkir');
+                      result.rajaongkir.status.code.should.deep.equal(200);
+                      result.rajaongkir.status.description.should.deep.equal("OK");
+                  });
+              });
+          });
 
-                describe('Get SAP Waybill', function () {
-                    it('Should Return SAP Waybill', function () {
-                        var params = {waybill: 'SOCAG00183235715'};
-                        return RajaOngkir.getSAPWaybill(params).then(function (result) {
-                            result.should.have.property('rajaongkir');
-                            result.rajaongkir.status.code.should.deep.equal(200);
-                            result.rajaongkir.status.description.should.deep.equal("OK");
-                        });
-                    });
-                });
+          describe('Get SAP Waybill', function () {
+              it('Should Return SAP Waybill', function () {
+                  var params = {waybill: 'SOCAG00183235715'};
+                  return RajaOngkir.getSAPWaybill(params).then(function (result) {
+                      result.should.have.property('rajaongkir');
+                      result.rajaongkir.status.code.should.deep.equal(200);
+                      result.rajaongkir.status.description.should.deep.equal("OK");
+                  });
+              });
+          });
 
-                describe('Get SI CEPAT Waybill', function () {
-                    it('Should Return SI CEPAT Waybill', function () {
-                        var params = {waybill: 'SOCAG00183235715'};
-                        return RajaOngkir.getSiCepatWaybill(params).then(function (result) {
-                            result.should.have.property('rajaongkir');
-                            result.rajaongkir.status.code.should.deep.equal(200);
-                            result.rajaongkir.status.description.should.deep.equal("OK");
-                        });
-                    });
-                });
+          describe('Get SI CEPAT Waybill', function () {
+              it('Should Return SI CEPAT Waybill', function () {
+                  var params = {waybill: 'SOCAG00183235715'};
+                  return RajaOngkir.getSiCepatWaybill(params).then(function (result) {
+                      result.should.have.property('rajaongkir');
+                      result.rajaongkir.status.code.should.deep.equal(200);
+                      result.rajaongkir.status.description.should.deep.equal("OK");
+                  });
+              });
+          });
 
-                describe('Get PCP Waybill', function () {
-                    it('Should Return PCP Waybill', function () {
-                        var params = {waybill: 'SOCAG00183235715'};
-                        return RajaOngkir.getPCPWaybill(params).then(function (result) {
-                            result.should.have.property('rajaongkir');
-                            result.rajaongkir.status.code.should.deep.equal(200);
-                            result.rajaongkir.status.description.should.deep.equal("OK");
-                        });
-                    });
-                });
+          describe('Get PCP Waybill', function () {
+              it('Should Return PCP Waybill', function () {
+                  var params = {waybill: 'SOCAG00183235715'};
+                  return RajaOngkir.getPCPWaybill(params).then(function (result) {
+                      result.should.have.property('rajaongkir');
+                      result.rajaongkir.status.code.should.deep.equal(200);
+                      result.rajaongkir.status.description.should.deep.equal("OK");
+                  });
+              });
+          });
 
-                describe('Get JET Waybill', function () {
-                    it('Should Return JET Waybill', function () {
-                        var params = {waybill: 'SOCAG00183235715'};
-                        return RajaOngkir.getJETWaybill(params).then(function (result) {
-                            result.should.have.property('rajaongkir');
-                            result.rajaongkir.status.code.should.deep.equal(200);
-                            result.rajaongkir.status.description.should.deep.equal("OK");
-                        });
-                    });
-                });
+          describe('Get JET Waybill', function () {
+              it('Should Return JET Waybill', function () {
+                  var params = {waybill: 'SOCAG00183235715'};
+                  return RajaOngkir.getJETWaybill(params).then(function (result) {
+                      result.should.have.property('rajaongkir');
+                      result.rajaongkir.status.code.should.deep.equal(200);
+                      result.rajaongkir.status.description.should.deep.equal("OK");
+                  });
+              });
+          });
 
-                describe('Get DSE Waybill', function () {
-                    it('Should Return DSE Waybill', function () {
-                        var params = {waybill: 'SOCAG00183235715'};
-                        return RajaOngkir.getDSEWaybill(params).then(function (result) {
-                            result.should.have.property('rajaongkir');
-                            result.rajaongkir.status.code.should.deep.equal(200);
-                            result.rajaongkir.status.description.should.deep.equal("OK");
-                        });
-                    });
-                });
+          describe('Get DSE Waybill', function () {
+              it('Should Return DSE Waybill', function () {
+                  var params = {waybill: 'SOCAG00183235715'};
+                  return RajaOngkir.getDSEWaybill(params).then(function (result) {
+                      result.should.have.property('rajaongkir');
+                      result.rajaongkir.status.code.should.deep.equal(200);
+                      result.rajaongkir.status.description.should.deep.equal("OK");
+                  });
+              });
+          });
 
-                describe('Get FIRST Waybill', function () {
-                    it('Should Return FIRST Waybill', function () {
-                        var params = {waybill: 'SOCAG00183235715'};
-                        return RajaOngkir.getFirstWaybill(params).then(function (result) {
-                            result.should.have.property('rajaongkir');
-                            result.rajaongkir.status.code.should.deep.equal(200);
-                            result.rajaongkir.status.description.should.deep.equal("OK");
-                        });
-                    });
-                }); */
+          describe('Get FIRST Waybill', function () {
+              it('Should Return FIRST Waybill', function () {
+                  var params = {waybill: 'SOCAG00183235715'};
+                  return RajaOngkir.getFirstWaybill(params).then(function (result) {
+                      result.should.have.property('rajaongkir');
+                      result.rajaongkir.status.code.should.deep.equal(200);
+                      result.rajaongkir.status.description.should.deep.equal("OK");
+                  });
+              });
+          }); 
       })
     } else {
       describe('API Key doesn\'t exist', function () {

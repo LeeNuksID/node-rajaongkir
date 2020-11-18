@@ -18,7 +18,7 @@ describe('RajaOngkir Basic Package Test', function () {
         it('Should Return API Key', function () {
 
         })
-        var RajaOngkir = require('../index').Basic(apiKey)
+        var RajaOngkir = require('../app').Basic(apiKey)
 
         describe('Get All Provinces', function () {
           it('Should Return All Provinces', function () {

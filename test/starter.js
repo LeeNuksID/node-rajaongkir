@@ -1,14 +1,5 @@
-var assert = require('assert')
-
-var vows = require('vows')
-
 var chai = require('chai')
-
-var nock = require('nock')
-
 const apiKey = process.env.API_KEY
-var assert = chai.assert
-var expect = chai.expect
 chai.should()
 
 describe('RajaOngkir Starter Package Test', function () {
@@ -18,7 +9,7 @@ describe('RajaOngkir Starter Package Test', function () {
         it('Should Return API Key', function () {
 
         })
-        var RajaOngkir = require('../index').Starter(apiKey)
+        var RajaOngkir = require('../app').Starter(apiKey)
 
         describe('Get All Provinces', function () {
           it('Should Return All Provinces', function () {

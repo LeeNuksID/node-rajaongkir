@@ -1,12 +1,12 @@
 {
   "name": "node-rajaongkir",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "Node.js Library for RajaOngkir",
   "main": "app.js",
   "scripts": {
     "test": "mocha --timeout 100000 --reporter spec --bail --check-leaks test",
-    "test-ci": "istanbul cover node_modules/mocha/bin/_mocha --timeout 100000 --report lcovonly -- --reporter spec --check-leaks",
-    "test-local": "istanbul cover ./node_modules/mocha/bin/_mocha test/pro --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+    "test-starter": "mocha --timeout 100000 --reporter spec --bail --check-leaks test/starter",
+    "test-pro": "mocha --timeout 100000 --reporter spec --bail --check-leaks test/pro",
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,7 @@
     "api",
     "tiki"
   ],
-  "author" : "LeeNuksID",
+  "author": "LeeNuksID",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/LeeNuksID/node-rajaongkir/issues"
