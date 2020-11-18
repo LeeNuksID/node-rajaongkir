@@ -1,4 +1,7 @@
-# Node-RajaOngkir
+<img align="center" src="https://res.cloudinary.com/aibnuhibban/image/upload/v1605659033/Github/Node-RajaOngkir/RajaOngkir_k1pvsq.png">
+
+# Node RajaOngkir
+![watchers](https://badgen.net/github/watchers/LeeNuksID/node-rajaongkir) [![Build Status](https://img.shields.io/github/stars/LeeNuksID/node-rajaongkir.svg)](https://github.com/LeeNuksID/node-rajaongkir) [![License](https://img.shields.io/github/license/LeeNuksID/node-rajaongkir.svg)](https://github.com/LeeNuksID/node-rajaongkir) [![Latest Stable Version](https://img.shields.io/npm/v/node-rajaongkir.svg)](https://www.npmjs.com/package/node-rajaongkir) ![appveyor](https://ci.appveyor.com/api/projects/status/bq33xq476yj5ut7u/branch/master?svg=true) ![status](https://badgen.net/github/status/LeeNuksID/node-rajaongkir)
 
 *Node RajaOngkir is **Node.js Library for RajaOngkir***
 
@@ -68,6 +71,34 @@ RajaOngkir.getCities().then(function (result){
 });
 ```
 
+### Menampilkan Spesifik Kota (Starter)
+```javascript
+var RajaOngkir = require('node-rajaongkir').Starter('apiKey');
+
+var id = 1; // ID Kota
+RajaOngkir.getCity(id).then(function (result){
+    // Aksi ketika data Kota berhasil ditampilkan
+}).catch(function (error){
+    // Aksi ketika error terjadi
+});
+```
+### Menghitung Biaya Kirim (Starter)
+```javascript
+var RajaOngkir = require('node-rajaongkir').Starter('apiKey');
+
+var params = {
+    origin: 501, // ID Kota atau Kabupaten Asal
+    destination: 114, // ID Kota atau Kabupaten Tujuan
+    weight: 1700, // Berat Barang dalam gram (gr)
+    courirer: 'jne' // Kurir
+};
+RajaOngkir.getCost(params).then(function (result){
+    // Aksi ketika data Biaya berhasil ditampilkan
+}).catch(function (error){
+    // Aksi ketika error terjadi
+});
+```
+
 ### Menghitung Biaya Kirim JNE (Starter)
 ```javascript
 var RajaOngkir = require('node-rajaongkir').Starter('apiKey');
@@ -98,6 +129,7 @@ Tipe akun **Starter** memiliki beberapa fitur antara lain :
 * <code>getProvince(idProvinsi)</code> untuk menampilkan data Provinsi berdasarkan ID / parameter ID
 * <code>getCities()</code> untuk menampilkan seluruh data Kota
 * <code>getCity(idKota)</code> untuk menampilkan data Kota berdasarkan ID / Parameter ID
+* <code>getCost(params)</code> untuk menampilkan biaya pengiriman berdasarkan Parameter
 * <code>getJNECost(params)</code> untuk menampilkan biaya pengiriman Kurir JNE
 * <code>getPOSCost(params)</code> untuk menampilkan biaya pengiriman Kurir POS
 * <code>getTIKICost(params)</code> untuk menampilkan biaya pengiriman Kurir TIKI
@@ -112,6 +144,7 @@ Tipe akun **Basic** memiliki beberapa fitur antara lain :
 * <code>getProvince(idProvinsi)</code> untuk menampilkan data Provinsi berdasarkan ID / parameter ID
 * <code>getCities()</code> untuk menampilkan seluruh data Kota
 * <code>getCity(idKota)</code> untuk menampilkan data Kota berdasarkan ID / Parameter ID
+* <code>getCost(params)</code> untuk menampilkan biaya pengiriman berdasarkan Parameter
 * <code>getJNECost(params)</code> untuk menampilkan biaya pengiriman Kurir JNE
 * <code>getPOSCost(params)</code> untuk menampilkan biaya pengiriman Kurir POS
 * <code>getTIKICost(params)</code> untuk menampilkan biaya pengiriman Kurir TIKI
@@ -137,6 +170,7 @@ Tipe akun **Basic** memiliki beberapa fitur antara lain :
 * <code>getCities()</code> untuk menampilkan seluruh data Kota
 * <code>getCity(idKota)</code> untuk menampilkan data Kota berdasarkan ID / Parameter ID
 * <code>getCosts(params)</code> untuk menampilkan biaya pengiriman dari beberapa layanan pengiriman (kurir)
+* <code>getCost(params)</code> untuk menampilkan biaya pengiriman berdasarkan Parameter
 * <code>getJNECost(params)</code> untuk menampilkan biaya pengiriman Kurir JNE
 * <code>getPOSCost(params)</code> untuk menampilkan biaya pengiriman Kurir POS
 * <code>getTIKICost(params)</code> untuk menampilkan biaya pengiriman Kurir TIKI
