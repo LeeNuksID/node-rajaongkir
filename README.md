@@ -131,11 +131,12 @@ Tipe akun **Basic** memiliki beberapa fitur antara lain :
 ```javascript
 var RajaOngkir = require('node-rajaongkir').Pro('apiKey');
 ```
-Tipe akun **Basic** memiliki beberapa fitur antara lain :
+Tipe akun **Pro** memiliki beberapa fitur antara lain :
 * <code>getProvinces()</code> untuk menampilkan seluruh data Provinsi 
 * <code>getProvince(idProvinsi)</code> untuk menampilkan data Provinsi berdasarkan ID / parameter ID
 * <code>getCities()</code> untuk menampilkan seluruh data Kota
 * <code>getCity(idKota)</code> untuk menampilkan data Kota berdasarkan ID / Parameter ID
+* <code>getSubdistrict(idKota)</code> untuk menampilkan data Kecamatan berdasarkan ID / Parameter ID
 * <code>getCosts(params)</code> untuk menampilkan biaya pengiriman dari beberapa layanan pengiriman (kurir)
 * <code>getJNECost(params)</code> untuk menampilkan biaya pengiriman Kurir JNE
 * <code>getPOSCost(params)</code> untuk menampilkan biaya pengiriman Kurir POS
@@ -151,7 +152,9 @@ Tipe akun **Basic** memiliki beberapa fitur antara lain :
 * <code>getPOSInterCost(params)</code> untuk menampilkan biaya pengiriman internasional melalui kurir POS
 * <code>getCurrency()</code> untuk menampilkan informasi nilai tukar rupiah terhadap US dollar
 * <code>getJNEWaybill(params)</code> untuk melacak / mengetahui status pengiriman berdasarkan nomor resi JNE
+
 <a name="contribute"></a>
+
 # Kontribusi
 * Anda dapat Melaporkan issue (Kesalahan Program, Saran, dll) dengan membuat **New Issue** melalui halaman [Issue](https://github.com/LeeNuksID/node-rajaongkir/issues)
 * Anda juga dapat berkontribusi untuk Package ini dengan cara [Pull Request](https://github.com/LeeNuksID/node-rajaongkir/pulls) 

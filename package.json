@@ -1,6 +1,6 @@
 {
   "name": "node-rajaongkir",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Node.js Library for RajaOngkir",
   "main": "app.js",
   "scripts": {
@@ -21,6 +21,7 @@
     "api",
     "tiki"
   ],
+  "author" : "LeeNuksID",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/LeeNuksID/node-rajaongkir/issues"
