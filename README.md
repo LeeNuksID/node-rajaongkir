@@ -1,7 +1,14 @@
 <img align="center" src="https://res.cloudinary.com/aibnuhibban/image/upload/v1605659033/Github/Node-RajaOngkir/RajaOngkir_k1pvsq.png">
 
+<p align="center">.
+<a href="https://badgen.net/github/watchers/LeeNuksID/node-rajaongkir"><img src="https://badgen.net/github/watchers/LeeNuksID/node-rajaongkir" alt="Watchers"></a>
+<a href="https://ci.appveyor.com/project/AIbnuHIbban/node-rajaongkir"><img src="https://ci.appveyor.com/api/projects/status/bq33xq476yj5ut7u/branch/master?svg=true" alt="Build Status"></a>
+<a href="https://img.shields.io/github/stars/LeeNuksID/node-rajaongkir.svg"><img src="https://img.shields.io/github/stars/LeeNuksID/node-rajaongkir.svg" alt="Total Downloads"></a>
+<a href="https://github.com/LeeNuksID/node-rajaongkir/releases"><img src="https://badgen.net/github/release/LeeNuksID/node-rajaongkir" alt="Latest Stable Version"></a>
+<a href="https://github.com/LeeNuksID/node-rajaongkir/blob/master/LICENSE"><img src="https://img.shields.io/github/license/LeeNuksID/node-rajaongkir.svg" alt="License"></a>
+</p>
+
 # Node RajaOngkir
-![watchers](https://badgen.net/github/watchers/LeeNuksID/node-rajaongkir) [![Build Status](https://img.shields.io/github/stars/LeeNuksID/node-rajaongkir.svg)](https://github.com/LeeNuksID/node-rajaongkir) [![License](https://img.shields.io/github/license/LeeNuksID/node-rajaongkir.svg)](https://github.com/LeeNuksID/node-rajaongkir) [![Latest Stable Version](https://img.shields.io/npm/v/node-rajaongkir.svg)](https://www.npmjs.com/package/node-rajaongkir) ![appveyor](https://ci.appveyor.com/api/projects/status/bq33xq476yj5ut7u/branch/master?svg=true) ![status](https://badgen.net/github/status/LeeNuksID/node-rajaongkir)
 
 *Node RajaOngkir is **Node.js Library for RajaOngkir***
 
