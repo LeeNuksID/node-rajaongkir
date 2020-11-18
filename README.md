@@ -99,7 +99,7 @@ var params = {
     weight: 1700, // Berat Barang dalam gram (gr)
     courirer: 'jne' // Kurir
 };
-RajaOngkir.getCost(params).then(function (result){
+RajaOngkir.getCosts(params).then(function (result){
     // Aksi ketika data Biaya berhasil ditampilkan
 }).catch(function (error){
     // Aksi ketika error terjadi
@@ -136,7 +136,7 @@ Tipe akun **Starter** memiliki beberapa fitur antara lain :
 * <code>getProvince(idProvinsi)</code> untuk menampilkan data Provinsi berdasarkan ID / parameter ID
 * <code>getCities()</code> untuk menampilkan seluruh data Kota
 * <code>getCity(idKota)</code> untuk menampilkan data Kota berdasarkan ID / Parameter ID
-* <code>getCost(params)</code> untuk menampilkan biaya pengiriman berdasarkan Parameter
+* <code>getCosts(params)</code> untuk menampilkan biaya pengiriman berdasarkan Parameter
 * <code>getJNECost(params)</code> untuk menampilkan biaya pengiriman Kurir JNE
 * <code>getPOSCost(params)</code> untuk menampilkan biaya pengiriman Kurir POS
 * <code>getTIKICost(params)</code> untuk menampilkan biaya pengiriman Kurir TIKI
@@ -151,7 +151,7 @@ Tipe akun **Basic** memiliki beberapa fitur antara lain :
 * <code>getProvince(idProvinsi)</code> untuk menampilkan data Provinsi berdasarkan ID / parameter ID
 * <code>getCities()</code> untuk menampilkan seluruh data Kota
 * <code>getCity(idKota)</code> untuk menampilkan data Kota berdasarkan ID / Parameter ID
-* <code>getCost(params)</code> untuk menampilkan biaya pengiriman berdasarkan Parameter
+* <code>getCosts(params)</code> untuk menampilkan biaya pengiriman berdasarkan Parameter
 * <code>getJNECost(params)</code> untuk menampilkan biaya pengiriman Kurir JNE
 * <code>getPOSCost(params)</code> untuk menampilkan biaya pengiriman Kurir POS
 * <code>getTIKICost(params)</code> untuk menampilkan biaya pengiriman Kurir TIKI
