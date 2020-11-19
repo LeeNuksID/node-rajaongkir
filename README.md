@@ -4,7 +4,7 @@
 <a href="https://badgen.net/github/watchers/LeeNuksID/node-rajaongkir"><img src="https://badgen.net/github/watchers/LeeNuksID/node-rajaongkir" alt="Watchers"></a>
 <a href="https://ci.appveyor.com/project/AIbnuHIbban/node-rajaongkir"><img src="https://ci.appveyor.com/api/projects/status/bq33xq476yj5ut7u/branch/master?svg=true" alt="Build Status"></a>
 <a href="https://github.com/LeeNuksID/node-rajaongkir"><img src="https://img.shields.io/github/stars/LeeNuksID/node-rajaongkir.svg" alt="Total Downloads"></a>
-<a href="https://github.com/LeeNuksID/node-rajaongkir/releases"><img src="https://badgen.net/github/release/LeeNuksID/node-rajaongkir" alt="Latest Stable Version"></a>
+<a href="https://github.com/LeeNuksID/node-rajaongkir/releases"><img src="https://badge.fury.io/js/node-rajaongkir.svg" alt="Latest Stable Version"></a>
 <a href="https://github.com/LeeNuksID/node-rajaongkir/blob/master/LICENSE"><img src="https://img.shields.io/github/license/LeeNuksID/node-rajaongkir.svg" alt="License"></a>
 </p>
 
