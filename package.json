@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha --timeout 100000 --reporter spec --bail --check-leaks test",
     "test-starter": "mocha --timeout 100000 --reporter spec --bail --check-leaks test/starter",
-    "test-pro": "mocha --timeout 100000 --reporter spec --bail --check-leaks test/pro",
+    "test-pro": "mocha --timeout 100000 --reporter spec --bail --check-leaks test/pro"
   },
   "repository": {
     "type": "git",
