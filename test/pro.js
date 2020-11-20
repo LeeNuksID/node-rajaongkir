@@ -53,13 +53,9 @@ describe('RajaOngkir Pro Package Test', function () {
           })
         })
 
-        describe('Get Specific Subdistrict by ID', function () {
-          it('Should Return Specific Subdistrict', function () {
-            var params = {
-              city: 1,
-              id: 1
-            }
-            return RajaOngkir.getSubDistrict(params).then(function (result) {
+        describe('Get Specific All Subdistrict', function () {
+          it('Should Return All Subdistrict', function () {
+            return RajaOngkir.getSubDistrict().then(function (result) {
               result.should.have.property('rajaongkir')
               result.rajaongkir.status.code.should.deep.equal(200)
               result.rajaongkir.status.description.should.deep.equal('OK')
