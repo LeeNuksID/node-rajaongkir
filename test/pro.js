@@ -1,5 +1,5 @@
 var chai = require('chai')
-const apiKey = "1cb6ca038ddb281f174dbc4264474df0"
+const apiKey = process.env.API_KEY
 chai.should()
 
 describe('RajaOngkir Pro Package Test', function () {
@@ -11,47 +11,47 @@ describe('RajaOngkir Pro Package Test', function () {
         })
         var RajaOngkir = require('../app').Pro(apiKey)
 
-        // describe('Get All Provinces', function () {
-        //   it('Should Return All Provinces', function () {
-        //     return RajaOngkir.getProvinces().then(function (result) {
-        //       result.should.have.property('rajaongkir')
-        //       result.rajaongkir.status.code.should.deep.equal(200)
-        //       result.rajaongkir.status.description.should.deep.equal('OK')
-        //     })
-        //   })
-        // })
+        describe('Get All Provinces', function () {
+          it('Should Return All Provinces', function () {
+            return RajaOngkir.getProvinces().then(function (result) {
+              result.should.have.property('rajaongkir')
+              result.rajaongkir.status.code.should.deep.equal(200)
+              result.rajaongkir.status.description.should.deep.equal('OK')
+            })
+          })
+        })
 
-        // describe('Get Specific Province by ID', function () {
-        //   it('Should Return Specific Province', function () {
-        //     var id = 1
-        //     return RajaOngkir.getProvince(id).then(function (result) {
-        //       result.should.have.property('rajaongkir')
-        //       result.rajaongkir.status.code.should.deep.equal(200)
-        //       result.rajaongkir.status.description.should.deep.equal('OK')
-        //     })
-        //   })
-        // })
+        describe('Get Specific Province by ID', function () {
+          it('Should Return Specific Province', function () {
+            var id = 1
+            return RajaOngkir.getProvince(id).then(function (result) {
+              result.should.have.property('rajaongkir')
+              result.rajaongkir.status.code.should.deep.equal(200)
+              result.rajaongkir.status.description.should.deep.equal('OK')
+            })
+          })
+        })
 
-        // describe('Get All Cities', function () {
-        //   it('Should Return All Cities', function () {
-        //     return RajaOngkir.getCities().then(function (result) {
-        //       result.should.have.property('rajaongkir')
-        //       result.rajaongkir.status.code.should.deep.equal(200)
-        //       result.rajaongkir.status.description.should.deep.equal('OK')
-        //     })
-        //   })
-        // })
+        describe('Get All Cities', function () {
+          it('Should Return All Cities', function () {
+            return RajaOngkir.getCities().then(function (result) {
+              result.should.have.property('rajaongkir')
+              result.rajaongkir.status.code.should.deep.equal(200)
+              result.rajaongkir.status.description.should.deep.equal('OK')
+            })
+          })
+        })
 
-        // describe('Get Specific City by ID', function () {
-        //   it('Should Return Specific City', function () {
-        //     var id = 1
-        //     return RajaOngkir.getCity(id).then(function (result) {
-        //       result.should.have.property('rajaongkir')
-        //       result.rajaongkir.status.code.should.deep.equal(200)
-        //       result.rajaongkir.status.description.should.deep.equal('OK')
-        //     })
-        //   })
-        // })
+        describe('Get Specific City by ID', function () {
+          it('Should Return Specific City', function () {
+            var id = 1
+            return RajaOngkir.getCity(id).then(function (result) {
+              result.should.have.property('rajaongkir')
+              result.rajaongkir.status.code.should.deep.equal(200)
+              result.rajaongkir.status.description.should.deep.equal('OK')
+            })
+          })
+        })
 
         describe('Get Specific Subdistrict by Subdistrict ID', function () {
           it('Should Return Specific Subdistrict ID', function () {
